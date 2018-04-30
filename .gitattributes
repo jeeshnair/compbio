@@ -1,0 +1,23 @@
+# Uncomment each section to enable it.
+# See the following link for more details
+#   https://git-scm.com/docs/gitattributes
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+#   This ensures that all files that git considers to be text will have normalized (LF) line endings in the repository. 
+#   The core.eol configuration variable controls which line endings git will use for normalized files in your working directory; 
+#   the default is to use the native line ending for your platform, or CRLF if core.autocrlf is set.
+###############################################################################
+* text=auto
+
+###############################################################################
+# Set default behavior for command prompt diff.
+#   It can tell git whether to generate a textual patch for the path or to treat the path as a binary file. It can also affect what line is shown on the hunk 
+#   header @@ -k,l +n,m @@ line, tell git to use an external command to generate the diff, or ask git to convert binary files to a text format before generating the diff.
+#   Note: This is only used by command line
+##############################################################################
+# We eventually use strings acquired from another source as test data.  Depending on the source, those strings might
+# contain characters which would make git consider them binary files; here we instruct git appropriatly.
+*.cs    diff
+*.xml   diff
+*.json  diff
